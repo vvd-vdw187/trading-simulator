@@ -33,7 +33,7 @@ class Simulator(ABC):
                 if not isinstance(result, bool):
                     raise ValueError(f"The function {func.__name__} does not return a boolean value.")
                 
-        #Test the defined buy and sell functions for returning float values 
+        #Test the defined stop loss and take profit functions for returning float values 
         for func in (self.long_stop_loss, self.long_take_profit, self.short_stop_loss, self.short_take_profit):
             if func is not None:
                 num_params = len(inspect.signature(func).parameters)
